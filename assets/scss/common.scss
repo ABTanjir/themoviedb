@@ -1,0 +1,26 @@
+$theme-colors: (
+  'primary': #145bea,
+  'secondary': #833bec,
+  'success': #1ce1ac,
+  'info': #ff7d50,
+  'warning': #ffbe0b,
+  'danger': #ff007f,
+  'light': #c0ccda,
+  'dark': #303952,
+);
+
+body {
+  background: map-get($theme-colors, dark);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  padding: 3rem;
+  width: 400px;
+}
