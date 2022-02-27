@@ -1,16 +1,21 @@
 $theme-colors: (
-  'primary': #145bea,
-  'secondary': #833bec,
-  'success': #1ce1ac,
-  'info': #ff7d50,
-  'warning': #ffbe0b,
-  'danger': #ff007f,
-  'light': #c0ccda,
   'dark': #303952,
 );
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
 body {
   background: map-get($theme-colors, dark);
+}
+
+h3{
+  font-size: 16px;
 }
 
 .wrapper {
@@ -21,6 +26,13 @@ body {
 }
 
 .container {
-  padding: 3rem;
-  width: 400px;
+  width: 100%;
+}
+
+.col-half{
+  width: 50%;
+}
+
+.mx-auto{
+  margin: 0 auto;
 }

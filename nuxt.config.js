@@ -1,4 +1,8 @@
 export default {
+  axios: {
+    baseURL: process.env.THEMOVIEDB_API
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'setschedule',
@@ -34,9 +38,17 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    "@nuxtjs/axios",
   ],
-
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+  // env variables
+  env: {
+    themoviedb_api: process.env.THEMOVIEDB_API,
+    themoviedb_key: process.env.THEMOVIEDB_KEY,
+    themoviedb_img_path: process.env.THEMOVIEDB_IMAGE
   }
+
+
 }
