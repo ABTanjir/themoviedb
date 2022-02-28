@@ -1,9 +1,11 @@
 <template lang="">
-  <div>
+  <div
     <Nav :query="query" @input="fetchResult"/>
 
     <Preloader v-if="$fetchState.pending" />
+
     <Card v-else :items="showList"/>
+    <!-- Didn't implemented pagination -->
   </div>
 </template>
 <script>
