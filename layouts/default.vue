@@ -1,5 +1,6 @@
 <template>
   <div class="wrapper">
+    <!-- We might need header and footer later but for now those are empty -->
     <Header />
       <div class="container">
         <Nuxt />
