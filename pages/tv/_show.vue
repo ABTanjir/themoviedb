@@ -6,43 +6,51 @@
 
     <div class="tv-show-bg" :style="{ backgroundImage: `url(${backdrop})` }"></div>
 
-        <div class="tv-back">
-          <NuxtLink class="button" :to="{ name: 'index' }">
-            <i class="material-icons">arrow_back</i>
-            <span>Back To Home</span>
-          </NuxtLink>
+    <div class="tv-back">
+      <NuxtLink class="button" :to="{ name: 'index' }">
+        <i class="material-icons">arrow_back</i>
+        <span>Back To Home</span>
+      </NuxtLink>
+    </div>
+
+    <div class="tv-show-info">
+      <div class="tv-show-img">
+        <img :src="`${poster}`"/>
+      </div>
+      <div class="tv-info">
+        <h1>{{ tvshow.name }}</h1>
+
+        <p class="genres">
+          <span v-for="genre in tvshow.genres">{{ genre.name }}</span>
+        </p>
+
+        <p class="date">
+          Date: {{ tvshow.first_air_date }}
+        </p>
+
+        <p>Popularity:</p>
+        <div class="popularity">
+          <div class="progress" :style="{ width:progress, backgroundColor:progressColor   }"></div>
         </div>
-      <div class="tv-show-info">
-        <div class="tv-show-img">
-          <img :src="`${poster}`"/>
-        </div>
-        <div class="tv-info">
-          <h1>{{ tvshow.name }}</h1>
 
-          <p class="genres">
-            <span v-for="genre in tvshow.genres">{{ genre.name }}</span>
-          </p>
-
-          <p class="date">
-            Date: {{ tvshow.first_air_date }}
-          </p>
-
-          <p>Popularity:</p>
-          <div class="popularity">
-            <div class="progress" :style="{ width:progress, backgroundColor:progressColor   }"></div>
-          </div>
-
-          <div class="overview">
-            <p>Overview: </p>
-            {{ tvshow.overview }}
-          </div>
+        <div class="overview">
+          <p>Overview: </p>
+          {{ tvshow.overview }}
         </div>
       </div>
+    </div>
+
   </div>
 </template>
 <script>
 export default {
   name: 'TvShow',
+
+  head(){
+    return {
+      title: this.tvshow.name
+    }
+  },
 
   async fetch() {
     await this.getTvShow()

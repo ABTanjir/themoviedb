@@ -11,6 +11,12 @@
 export default {
   name: 'SearchPage',
 
+  head(){
+    return {
+      title: `Search - ${this.query }`
+    }
+  },
+
   async fetch() {
     await this.fetchResult(this.$route.query.q)
   },
