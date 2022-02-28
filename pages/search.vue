@@ -24,7 +24,6 @@ export default {
   methods: {
     async fetchResult(query) {
       this.query = query
-      console.log("IN", query)
       let uri = `/search/tv?api_key=${process.env.themoviedb_key}&language=en-US&page=1&query=${query}`;
       await this.$axios
       .get(uri)
