@@ -1,5 +1,6 @@
 <template>
   <div class="col-half mx-auto">
+    <div class="logo">Set<span>Schedule</span></div>
     <form method="get" class="search-form form" action="/search">
       <label>
         <input type="search" class="search-field" placeholder="Search for tv show..." name="q" v-model="q" />
@@ -7,7 +8,6 @@
       <button type="submit" class="search-submit button material-icons">
         <i class="material-icons">search</i>
       </button>
-
     </form>
   </div>
 </template>
@@ -24,7 +24,15 @@ export default {
 </script>
 
 <style lang="css">
-
+.logo{
+  font-size: 40px;
+  font-weight: 600;
+  text-align: center;
+  color: #e0e0e5;
+}
+.logo span{
+  color: #c01908;
+}
 input[type="search"] {
   -webkit-appearance: none !important;
   background-clip: padding-box;
